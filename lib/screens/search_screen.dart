@@ -9,11 +9,12 @@ class VoiceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
      return Scaffold(
       body: Center(
-        child: Text("Ses Ekranım"),
+        child: Text(""),
       ),
 
       bottomNavigationBar: BottomMenu(),
 
     );
+    
   }
 }

@@ -32,24 +32,25 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 200,
           //color: Colors.blue,
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Kullanıcı Adı',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
+            child: Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    CircleAvatar(
+      radius: 40, // Yuvarlak çerçeve boyutu
+      backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
+      backgroundColor: Colors.black, // Arka plan rengi
+    ),
+    const SizedBox(height: 10),
+    const Text(
+      'Buğra Kasapoğlu',
+      style: TextStyle(
+        color: Color.fromARGB(255, 156, 154, 154),
+        fontSize: 18,
+      ),
+    ),
+  ],
+),
+
             ),
             // Menü öğeleri
             ListTile(
