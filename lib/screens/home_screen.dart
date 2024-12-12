@@ -13,7 +13,14 @@ class HomeScreen extends StatelessWidget {
       // AppBar
       appBar: AppBar(
         backgroundColor: Colors.white, 
-        title: const Text('Ana Sayfa'),
+        title: const Text(
+          'Ana Sayfa',
+          style: TextStyle(
+            color: Colors.black, // Yazı rengi
+            fontSize: 18, // Yazı boyutu
+            fontWeight: FontWeight.normal, // Yazı tipi
+          ),
+        ),
         actions: [
           IconButton(
             icon: const Icon(CupertinoIcons.app),
@@ -22,35 +29,90 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
+      // Fitness Asistan Yazısı
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: DotLottieLoader.fromAsset("assets/motions/home.lottie",
+                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                        if (dotlottie != null) {
+                          return Lottie.memory(dotlottie.animations.values.single);
+                        } else {
+                          return Container();
+                        }
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // Sol üst köşe yazısı
+          Positioned(
+            top: 16,
+            left: 16,
+            child: Text(
+              'Fitness Asistan',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+                shadows: [
+                  Shadow(
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 3.0,
+                    color: Colors.grey.withOpacity(0.8),
+                  ),
+                  Shadow(
+                    offset: Offset(-2.0, -2.0),
+                    blurRadius: 3.0,
+                    color: Colors.grey.withOpacity(0.8),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+
+      // Alt navigasyon çubuğu
+      bottomNavigationBar: BottomMenu(),
+
       // Drawer (Yan Menü)
       drawer: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 0,
         child: Column(
           children: [
           // Drawer Header
             Container(
               height: 200,
-          //color: Colors.blue,
-            child: Column(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    CircleAvatar(
-      radius: 40, // Yuvarlak çerçeve boyutu
-      backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
-      backgroundColor: Colors.black, // Arka plan rengi
-    ),
-    const SizedBox(height: 10),
-    const Text(
-      'Buğra Kasapoğlu',
-      style: TextStyle(
-        color: Color.fromARGB(255, 156, 154, 154),
-        fontSize: 18,
-      ),
-    ),
-  ],
-),
-
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 40, // Yuvarlak çerçeve boyutu
+                    backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
+                    backgroundColor: Colors.black, // Arka plan rengi
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Buğra Kasapoğlu',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 156, 154, 154),
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
             ),
             // Menü öğeleri
             ListTile(
@@ -68,7 +130,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
 
-              ListTile(
+            ListTile(
               leading: const Icon(CupertinoIcons.person),
               title: const Text('Profil'),
               onTap: () {
@@ -76,7 +138,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
 
-              ListTile(
+            ListTile(
               leading: const Icon(CupertinoIcons.settings),
               title: const Text('Ayarlar'),
               onTap: () {
@@ -86,32 +148,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      // Ana içerik
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              child: SizedBox(
-                width: double.infinity,
-                child: DotLottieLoader.fromAsset("assets/motions/home.lottie",
-                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single);
-                    } else {
-                      return Container();
-                    }
-                  },
-                  ),
-              ),
-            ),
-          ),
-        ],
-      ),
-
-      // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomMenu(),
     );
   }
 }
@@ -151,7 +187,7 @@ class BottomMenu extends StatelessWidget {
             context.go("/voice");
           },
           icon: Icon(
-            Icons.android,
+            Icons.check_circle,
           ),
         ),
     
@@ -172,10 +208,6 @@ class BottomMenu extends StatelessWidget {
             CupertinoIcons.person,
           ),
         ),
-    
-    
-    
-    
         ], 
       )
     );

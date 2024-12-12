@@ -14,7 +14,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("History Ekranım"),
+        child: Text(""),
       ),
 
       bottomNavigationBar: BottomMenu(),
