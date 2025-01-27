@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import '../screens/history_screen.dart';
 import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/profile_screen.dart';
@@ -33,10 +32,7 @@ final router = GoRouter(
       builder: (context, state) => const SearchScreen(),
     ),
 
-            GoRoute(
-      path: '/history',
-      builder: (context, state) => const HistoryScreen(),
-    ),
+ 
 
   ],
 );
