@@ -17,7 +17,7 @@ class SearchScreen extends StatelessWidget {
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(99),
             ),
-            child: TextField(
+            child: const TextField(
               decoration: InputDecoration(
                 hintText: 'Arama yap...',
                 border: InputBorder.none,
@@ -27,10 +27,10 @@ class SearchScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text(""),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

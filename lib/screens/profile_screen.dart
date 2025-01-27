@@ -23,100 +23,100 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start, // Üst tarafa hizalar
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50.0), // Yukarı taşıma miktarı
+              padding: EdgeInsets.only(top: 50.0), // Yukarı taşıma miktarı
               child: CircleAvatar(
                 radius: 100, // Yuvarlak çerçeve boyutu
                 backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
                 backgroundColor: Colors.black, // Arka plan rengi
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Buğra Kasapoğlu',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 40,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Sporcu Numarası',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5),
+            Text(
               '541526492492',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Ana Şube',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5),
+            Text(
               'Cevizlibağ',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Boy',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5),
+            Text(
               '1.89cm',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Kilo',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5),
+            Text(
               '76',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'Yağ Oranı',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5),
+            Text(
               '%15',
               style: TextStyle(
                 color: Colors.black,
@@ -126,7 +126,7 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

@@ -67,12 +67,12 @@ class HomeScreen extends StatelessWidget {
                 fontFamily: 'Roboto',
                 shadows: [
                   Shadow(
-                    offset: Offset(2.0, 2.0),
+                    offset: const Offset(2.0, 2.0),
                     blurRadius: 3.0,
                     color: Colors.grey.withOpacity(0.8),
                   ),
                   Shadow(
-                    offset: Offset(-2.0, -2.0),
+                    offset: const Offset(-2.0, -2.0),
                     blurRadius: 3.0,
                     color: Colors.grey.withOpacity(0.8),
                   ),
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
 
       // Drawer (Yan Menü)
       drawer: Drawer(
@@ -93,9 +93,9 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
           // Drawer Header
-            Container(
+            SizedBox(
               height: 200,
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
@@ -103,8 +103,8 @@ class HomeScreen extends StatelessWidget {
                     backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
                     backgroundColor: Colors.black, // Arka plan rengi
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     'Buğra Kasapoğlu',
                     style: TextStyle(
                       color: Color.fromARGB(255, 156, 154, 154),
@@ -159,7 +159,7 @@ class BottomMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 70,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -168,7 +168,7 @@ class BottomMenu extends StatelessWidget {
             onPressed:(){
               context.go("/home");
             }, 
-            icon: Icon(
+            icon: const Icon(
             CupertinoIcons.home,
             )
           ),
@@ -177,7 +177,7 @@ class BottomMenu extends StatelessWidget {
           onPressed: () {
             context.go("/search");
           },
-          icon: Icon(
+          icon: const Icon(
             CupertinoIcons.search,
           ),
         ),
@@ -186,7 +186,7 @@ class BottomMenu extends StatelessWidget {
           onPressed: () {
             context.go("/voice");
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.check_circle,
           ),
         ),
@@ -195,7 +195,7 @@ class BottomMenu extends StatelessWidget {
           onPressed: () {
             context.go("/history");
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.history,
           ),
         ),
@@ -204,7 +204,7 @@ class BottomMenu extends StatelessWidget {
           onPressed: () {
             context.go("/profile");
           },
-          icon: Icon(
+          icon: const Icon(
             CupertinoIcons.person,
           ),
         ),

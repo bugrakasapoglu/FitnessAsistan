@@ -17,7 +17,7 @@ class LoadingScreen extends StatelessWidget {
           children: [
             // Logo bölümü
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: 150,
                 height: 150,
                 child: Image.asset(
@@ -47,7 +47,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
               
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
           ],
         ),
       ),
