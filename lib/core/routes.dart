@@ -1,3 +1,4 @@
+import 'package:flutter_app/screens/login_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
@@ -31,6 +32,11 @@ final router = GoRouter(
       path: '/search',
       builder: (context, state) => const SearchScreen(),
     ),
+
+    GoRoute(
+        path: '/login',
+        builder: (context, state) => const LoginScreen(),
+      ),
 
  
 
