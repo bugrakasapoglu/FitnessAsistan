@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // AppBar
       appBar: AppBar(
-        backgroundColor: Colors.white, 
+        backgroundColor: Colors.white,
         title: const Text(
           'Ana Sayfa',
           style: TextStyle(
@@ -39,7 +39,8 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: SizedBox(
                     width: double.infinity,
-                    child: DotLottieLoader.fromAsset("assets/motions/home.lottie",
+                    child: DotLottieLoader.fromAsset(
+                      "assets/motions/home.lottie",
                       frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
                         if (dotlottie != null) {
                           return Lottie.memory(dotlottie.animations.values.single);
@@ -92,28 +93,6 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         child: Column(
           children: [
-          // Drawer Header
-            SizedBox(
-              height: 200,
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 40, // Yuvarlak çerçeve boyutu
-                    backgroundImage: AssetImage('assets/images/pp.jpg'), // Resim yolu
-                    backgroundColor: Colors.black, // Arka plan rengi
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Buğra Kasapoğlu',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 156, 154, 154),
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             // Menü öğeleri
             ListTile(
               leading: const Icon(CupertinoIcons.home),
@@ -129,7 +108,6 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-
             ListTile(
               leading: const Icon(CupertinoIcons.person),
               title: const Text('Profil'),
@@ -137,7 +115,6 @@ class HomeScreen extends StatelessWidget {
                 context.go("/profile");
               },
             ),
-
             ListTile(
               leading: const Icon(CupertinoIcons.settings),
               title: const Text('Ayarlar'),
@@ -165,44 +142,39 @@ class BottomMenu extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-            onPressed:(){
+            onPressed: () {
               context.go("/home");
-            }, 
+            },
             icon: const Icon(
-            CupertinoIcons.home,
-            )
+              CupertinoIcons.home,
+            ),
           ),
-    
-        IconButton(
-          onPressed: () {
-            context.go("/search");
-          },
-          icon: const Icon(
-            CupertinoIcons.search,
+          IconButton(
+            onPressed: () {
+              context.go("/search");
+            },
+            icon: const Icon(
+              CupertinoIcons.search,
+            ),
           ),
-        ),
-    
-       IconButton(
-          onPressed: () {
-            context.go("/voice");
-          },
-          icon: const Icon(
-            Icons.check_circle,
+          IconButton(
+            onPressed: () {
+              context.go("/voice");
+            },
+            icon: const Icon(
+              Icons.check_circle,
+            ),
           ),
-        ),
-    
-        
-    
-      IconButton(
-          onPressed: () {
-            context.go("/profile");
-          },
-          icon: const Icon(
-            CupertinoIcons.person,
+          IconButton(
+            onPressed: () {
+              context.go("/profile");
+            },
+            icon: const Icon(
+              CupertinoIcons.person,
+            ),
           ),
-        ),
-        ], 
-      )
+        ],
+      ),
     );
   }
 }
