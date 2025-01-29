@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/constants.dart';
 
 import 'home_screen.dart';
 
@@ -8,9 +9,10 @@ class VoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: const Text("Tamamlanmış Egzersizler"),
-        backgroundColor: Colors.blueAccent,
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -25,15 +27,15 @@ class VoiceScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               decoration: BoxDecoration(
-                color: Colors.blue.shade100,
+                color: const Color.fromARGB(255, 254, 255, 255),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.blueAccent, width: 2),
+                border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 2),
               ),
               child: const Center(
                 child: Icon(
                   Icons.image, 
                   size: 50,
-                  color: Colors.blueAccent,
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             );

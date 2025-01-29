@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 
 import 'home_screen.dart';
@@ -9,6 +10,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Column(
         children: [
           const SizedBox(height: 90), 
@@ -39,9 +41,9 @@ class ProfileScreen extends StatelessWidget {
                     context.push("/login"); 
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(0, 216, 201, 201), 
+                    backgroundColor: const Color.fromARGB(0, 2, 2, 2), 
                     shadowColor: const Color.fromARGB(0, 196, 51, 51), 
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     shape: RoundedRectangleBorder(
                       
                     ),

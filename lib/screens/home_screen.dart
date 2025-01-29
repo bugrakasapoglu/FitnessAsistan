@@ -1,6 +1,7 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
@@ -10,9 +11,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       // AppBar
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        
         title: const Text(
           'Ana Sayfa',
           style: TextStyle(
@@ -52,6 +54,24 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Expanded(
+                child: ListView(
+                  children: [
+                    Text(
+                      "Heading 1",
+                      style: TextStyle(
+                        fontSize: 38,
+                        
+                      ),
+                    ),
+                    Text("Heading 2"),
+                    Text("Heading 3"),
+                    Text("Heading 4"),
+                    
+
+                 ]
+                )
+              )
             ],
           ),
 
@@ -77,10 +97,12 @@ class HomeScreen extends StatelessWidget {
 
      
       bottomNavigationBar: const BottomMenu(),
+      
+      
 
       
       drawer: Drawer(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+       // backgroundColor: colors["surface"],
         elevation: 0,
         child: Column(
           children: [

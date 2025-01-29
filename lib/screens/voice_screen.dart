@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/constants.dart';
 
 import 'home_screen.dart';
 
@@ -8,8 +9,9 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        
         title: Center(
           child: Container(
             width: MediaQuery.of(context).size.width * 0.6, 
