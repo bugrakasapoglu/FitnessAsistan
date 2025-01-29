@@ -12,24 +12,22 @@ class SearchScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Center(
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.8, 
+            width: MediaQuery.of(context).size.width * 0.6, 
             decoration: BoxDecoration(
-              color: Colors.grey[200],
+              color: const Color.fromARGB(255, 8, 144, 235),
               borderRadius: BorderRadius.circular(99),
             ),
             child: const TextField(
               decoration: InputDecoration(
                 hintText: 'Arama yap...',
                 border: InputBorder.none,
-                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                prefixIcon: Icon(Icons.search, color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
           ),
         ),
       ),
-      body: const Center(
-        child: Text(""),
-      ),
+     
       bottomNavigationBar: const BottomMenu(),
     );
   }

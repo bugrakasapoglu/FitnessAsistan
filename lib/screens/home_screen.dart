@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           'Ana Sayfa',
           style: TextStyle(
             color: Colors.black, // Yazı rengi
-            fontSize: 18, // Yazı boyutu
+            fontSize: 20, // Yazı boyutu
             fontWeight: FontWeight.normal, // Yazı tipi
           ),
         ),
@@ -29,14 +29,14 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
-      // Fitness Asistan Yazısı
+     
       body: Stack(
         children: [
           Column(
             children: [
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(160),
                   child: SizedBox(
                     width: double.infinity,
                     child: DotLottieLoader.fromAsset(
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
 
-          // Sol üst köşe yazısı
+         
           Positioned(
             top: 16,
             left: 16,
@@ -67,16 +67,7 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto',
                 shadows: [
-                  Shadow(
-                    offset: const Offset(2.0, 2.0),
-                    blurRadius: 3.0,
-                    color: Colors.grey.withOpacity(0.8),
-                  ),
-                  Shadow(
-                    offset: const Offset(-2.0, -2.0),
-                    blurRadius: 3.0,
-                    color: Colors.grey.withOpacity(0.8),
-                  ),
+             
                 ],
               ),
             ),
@@ -84,16 +75,16 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
-      // Alt navigasyon çubuğu
+     
       bottomNavigationBar: const BottomMenu(),
 
-      // Drawer (Yan Menü)
+      
       drawer: Drawer(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 0,
         child: Column(
           children: [
-            // Menü öğeleri
+            
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
