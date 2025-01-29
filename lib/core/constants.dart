@@ -3,19 +3,19 @@ import 'package:flutter/widgets.dart';
 
 const colors = {
   "primary": Color.fromARGB(255, 20, 79, 217),
-  "secondary": Color.fromARGB(255, 64, 187, 33),
-  "onPrimary": Color.fromARGB(255, 207, 2, 53),
-  "onSecondary": Color.fromARGB(255, 224, 158, 204),
-  "surface": Color.fromARGB(255, 0, 0, 0),
-  "onSurface": Color.fromARGB(255, 255, 255, 255),
+  "secondary": Color.fromARGB(255, 255, 255, 255),
+  "onPrimary": Color.fromARGB(255, 240, 110, 4),
+  "onSecondary": Color.fromARGB(255, 0, 0, 0),
+  "surface": Color.fromARGB(255, 255, 255, 255),
+  "onSurface": Color.fromARGB(255, 88, 88, 88),
 };
 
-const darkcolors = {
+const darkColors = {
   "primary": Color.fromARGB(255, 20, 79, 217),
-  "secondary": Color.fromARGB(255, 20, 79, 217),
-  "onPrimary": Color.fromARGB(255, 20, 79, 217),
-  "onSecondary": Color.fromARGB(255, 20, 79, 217),
-  "surface": Color.fromARGB(255, 20, 79, 217),
-  "onSurface": Color.fromARGB(255, 20, 79, 217),
+  "secondary": Color.fromARGB(255, 255, 255, 255),
+  "onPrimary": Color.fromARGB(255, 240, 110, 4),
+  "onSecondary": Color.fromARGB(255, 0, 0, 0),
+  "surface": Color.fromARGB(255, 255, 255, 255),
+  "onSurface": Color.fromARGB(255, 255, 255, 255),
 };
 

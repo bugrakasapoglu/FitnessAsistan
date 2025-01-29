@@ -59,14 +59,18 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Heading 1",
-                      style: TextStyle(
-                        fontSize: 38,
-                        
+                      style: Theme.of(context).textTheme.bodySmall,
                       ),
+                    Text(
+                      "Heading 2",
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
-                    Text("Heading 2"),
-                    Text("Heading 3"),
-                    Text("Heading 4"),
+                    Text("Heading 3",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    Text("Heading 4",
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
                     
 
                  ]
