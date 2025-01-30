@@ -36,7 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
           child: Container(
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 8, 144, 235),
+              color: const Color.fromARGB(255, 20, 122, 6),
               borderRadius: BorderRadius.circular(99),
             ),
             child: TextField(

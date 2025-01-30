@@ -1,4 +1,4 @@
-# Flutter Projesi
+# Fitness Asistan
 
 ![İstinye Üniversitei](https://www.unitededucation.com/linklogoch/istinye-university-logo.png)
 
@@ -23,7 +23,11 @@
     
 -   [Kullanıcı girişi]
     
--   [Kişisel vücut ölçüleri]
+-   [Tamamlanana egzersizler sayfası]
+
+-   [Gece-Gündüz Modu]
+
+-   [Arama Sayfası]
     
 
 ## Kullanılan Teknolojiler
@@ -40,22 +44,19 @@
 
 ### Gereksinimler
 
--   Flutter SDK (sürüm X.X.X)
-    
--   Dart SDK (sürüm X.X.X)
-    
--   [Diğer gerekli yazılımlar]
-    
+-   Flutter SDK (sürüm 10.0.19045.5131)
+
+-   Dart SDK
 
 ### Kurulum Adımları
 
 1.  Projeyi bilgisayarınıza indirin:
 
-git  clone [proje-adresi]
+git  clone [https://github.com/bugrakasapoglu/FitnessAsistan.git]
 
 2.  Proje klasörüne gidin:
 
-cd [proje-adı]
+cd [FitnessAsistan]
 
 3.  Gerekli paketleri yükleyin:
 
@@ -67,28 +68,17 @@ flutter  run
 
 ## Proje Yapısı
 
-```
-
 lib/
-
-├── modeller/ # Veri modelleri
-
-├── ekranlar/ # Uygulama ekranları
-
-├── widgets/ # Tekrar kullanılabilir arayüz öğeleri
-
-├── servisler/ # API servisleri
-
-└── yardımcılar/ # Yardımcı fonksiyonlar
-
-
-```
+|--core/            #Veri modelleri
+|--screens/         #Uygulama ekranları
+|--services/        #API servisleri
+|--yardımcılar/     #Yardımcı fonksiyonlar
+|--auth/            #Doğrulama fonksiyonları
 
 ## Ekran Görüntüleri
 
-[https://github.com/bugrakasapoglu/FitnessAsistan/blob/main/assets/images/1.PNG]
-[https://github.com/bugrakasapoglu/FitnessAsistan/blob/main/assets/images/2.PNG]
-[https://github.com/bugrakasapoglu/FitnessAsistan/blob/main/assets/images/3.PNG]
+![Image](https://github.com/user-attachments/assets/e8d2fb6f-d562-4c99-9554-13236d3ce353)
+
 
 
 ## Projeye Katkı Sağlama
