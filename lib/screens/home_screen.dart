@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: LinearGradient(
               colors: [
                 Theme.of(context).brightness == Brightness.light
-                    ? Colors.green // Açık modda yeşil (doğa, sağlık)
+                    ? const Color.fromRGBO(76, 175, 80, 1) // Açık modda yeşil (doğa, sağlık)
                     : Colors.green,  // Koyu modda daha koyu yeşil tonları
                 Theme.of(context).brightness == Brightness.light
                     ? Colors.orange // Enerjik turuncu
@@ -177,8 +177,8 @@ class FitnessCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         elevation: 5,
         color: Theme.of(context).brightness == Brightness.light
-            ? Colors.green.shade100 // Açık modda yumuşak yeşil
-            : Colors.green.shade700, // Koyu modda koyu yeşil
+            ? Colors.green.shade100 
+            : Colors.green.shade700, 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -209,7 +209,7 @@ class BottomMenu extends StatelessWidget {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(0),
         color: Theme.of(context).brightness == Brightness.light
             ? Colors.green.shade50
             : Colors.green.shade800,

@@ -1,60 +1,74 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_app/core/constants.dart';
+import 'package:flutter_app/screens/home_screen.dart';
 import 'package:go_router/go_router.dart';
-
-import 'home_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context); // Tema kontrolü
+
     return Scaffold(
-      
-      body: Column(
-        children: [
-          
-          
-            const SizedBox(height: 50), 
-          Expanded(
-            child: Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [const Color.fromARGB(146, 27, 110, 255), const Color.fromARGB(255, 255, 19, 19)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(20), 
-              
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: theme.brightness == Brightness.dark
+              ? null // Koyu modda gradient kaldırıldı
+              : const LinearGradient(
+                  colors: [Colors.green, Colors.teal],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-                child: ElevatedButton(
-                  onPressed: () {
-                    context.push("/login"); 
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(0, 2, 2, 2), 
-                    shadowColor: const Color.fromARGB(0, 196, 51, 51), 
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                    shape: RoundedRectangleBorder(
-                      
-                    ),
+          color: theme.brightness == Brightness.dark ? Colors.green.shade800 : null,
+        ),
+        child: Center( // Tüm içeriği ortaladık
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ortaya almak için min boyutta tut
+            children: [
+              // Profil Resmi
+              const CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage("assets/profile_pic.png"),
+              ),
+              const SizedBox(height: 15),
+              // Kullanıcı Adı
+              const Text(
+                "Hoş Geldin, Kullanıcı!",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 30),
+              // Giriş Yap Butonu
+              ElevatedButton(
+                onPressed: () {
+                  context.push("/login");
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Text(
-                    "Giriş Yapınız",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  elevation: 5,
+                ),
+                child: const Text(
+                  "Giriş Yapınız",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }
