@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/main.dart';
+//import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_app/core/theme_provider.dart';
+//import 'package:flutter_app/screens/theme_provider.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:provider/provider.dart';
+//import '../theme_provider.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -44,25 +47,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            actions: [
-              IconButton(
-                icon: Icon(
-                  CupertinoIcons.moon,
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? Colors.black
-                      : Colors.white,
-                ),
-                onPressed: () {
-                  // Koyu/Açık mod geçişi
-                  final brightness =
-                      Theme.of(context).brightness == Brightness.dark
-                          ? Brightness.light
-                          : Brightness.dark;
-                  final theme = ThemeData(brightness: brightness);
-                  MyApp.of(context)?.setTheme(theme);
-                },
-              ),
-            ],
+         actions: [
+      Consumer<ThemeProvider>(
+         builder: (context, themeProvider, child) {
+          return IconButton(
+          icon: Icon(themeProvider.themeMode == ThemeMode.light
+              ? CupertinoIcons.moon
+              : CupertinoIcons.sun_max),
+              onPressed: () {
+              themeProvider.toggleTheme();
+        },
+      );
+    },
+  ),
+],
           ),
         ),
       ),

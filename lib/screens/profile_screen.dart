@@ -13,16 +13,8 @@ class ProfileScreen extends StatelessWidget {
       
       body: Column(
         children: [
-          const SizedBox(height: 90), 
-          const Text(
-            'Fitness Asistan',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 0, 0, 0),
-            ),
-            textAlign: TextAlign.center,
-          ),
+          
+          
             const SizedBox(height: 50), 
           Expanded(
             child: Center(
