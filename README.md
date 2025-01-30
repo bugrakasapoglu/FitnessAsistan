@@ -8,11 +8,11 @@
 
 ## Ekibimiz
 
--   **Danışman:**  
+-   *Danışman:*  
    
    [https://github.com/keyvanarasteh] (Keyvan Arasteh)
     
--   **Takım Üyeleri:**
+-   *Takım Üyeleri:*
     
 -   Buğra Kasapoğlu [GitHub](https://github.com/bugrakasapoglu/FitnessAsistan)
     
@@ -75,8 +75,6 @@ lib/
 |--yardımcılar/     #Yardımcı fonksiyonlar
 |--auth/            #Doğrulama fonksiyonları
 
-
-
 ## Ekran Görüntüleri
 
 ![Image](https://github.com/user-attachments/assets/6aa33a0b-c786-4eca-8749-07544b9960e7)
@@ -101,18 +99,18 @@ lib/
 
 1.  Projeyi forklayın
     
-2.  Yeni bir dal oluşturun (`git checkout -b ozellik/YeniOzellik`)
+2.  Yeni bir dal oluşturun (git checkout -b ozellik/YeniOzellik)
     
-3.  Değişikliklerinizi kaydedin (`git commit -m 'Yeni özellik eklendi'`)
+3.  Değişikliklerinizi kaydedin (git commit -m 'Yeni özellik eklendi')
     
-4.  Dalınıza gönderin (`git push origin ozellik/YeniOzellik`)
+4.  Dalınıza gönderin (git push origin ozellik/YeniOzellik)
     
 5.  Pull Request oluşturun
     
 
 ## Lisans
 
-[Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için  `LICENSE`  dosyasını inceleyebilirsiniz.
+[Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için  LICENSE  dosyasını inceleyebilirsiniz.
 
 ## İletişim
 
