@@ -24,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: LinearGradient(
               colors: [
                 Theme.of(context).brightness == Brightness.light
-                    ? const Color.fromRGBO(76, 175, 80, 1) // Açık modda yeşil (doğa, sağlık)
-                    : Colors.green,  // Koyu modda daha koyu yeşil tonları
+                    ? const Color.fromRGBO(76, 175, 80, 1)
+                    : Colors.green,  
                 Theme.of(context).brightness == Brightness.light
-                    ? Colors.orange // Enerjik turuncu
-                    : Colors.teal, // Koyu modda soğuk tonlar
+                    ? Colors.orange 
+                    : Colors.teal, 
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -41,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
               'Fitness Asistan',
               style: TextStyle(
                 color: Theme.of(context).brightness == Brightness.light
-                    ? Colors.white // Açık modda beyaz
-                    : Colors.white70, // Koyu modda daha soluk beyaz
+                    ? Colors.white 
+                    : Colors.white70, 
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -242,7 +242,7 @@ class BottomMenu extends StatelessWidget {
             icon: const Icon(CupertinoIcons.person),
           ),
         ],
-      ),
-    );
-  }
+),
+);
+}
 }
