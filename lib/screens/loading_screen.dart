@@ -28,8 +28,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
       
-            // Yükleniyor yazısı
-           // CircularProgressIndicator(),
+         
 
             
             InkWell(

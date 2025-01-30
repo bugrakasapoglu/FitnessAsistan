@@ -7,14 +7,14 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Tema kontrolü
+    final theme = Theme.of(context); 
 
     return Scaffold(
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: theme.brightness == Brightness.dark
-              ? null // Koyu modda gradient kaldırıldı
+              ? null 
               : const LinearGradient(
                   colors: [Colors.green, Colors.teal],
                   begin: Alignment.topLeft,
@@ -22,17 +22,22 @@ class ProfileScreen extends StatelessWidget {
                 ),
           color: theme.brightness == Brightness.dark ? Colors.green.shade800 : null,
         ),
-        child: Center( // Tüm içeriği ortaladık
+        child: Center( 
           child: Column(
-            mainAxisSize: MainAxisSize.min, // Ortaya almak için min boyutta tut
+            mainAxisSize: MainAxisSize.min, 
             children: [
-              // Profil Resmi
+             
               const CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage("assets/profile_pic.png"),
+                backgroundColor: Colors.white, 
+                child: CircleAvatar(
+                radius: 55, 
+                backgroundColor: Colors.grey, 
+                
+               ),
               ),
               const SizedBox(height: 15),
-              // Kullanıcı Adı
+              
               const Text(
                 "Hoş Geldin, Kullanıcı!",
                 style: TextStyle(
@@ -42,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // Giriş Yap Butonu
+             
               ElevatedButton(
                 onPressed: () {
                   context.push("/login");

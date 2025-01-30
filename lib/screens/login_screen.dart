@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: epostaYonetici,
                     decoration: InputDecoration(
                     hintText: "E-Posta",
-                   // helper: Text("E-Postanızı Giriniz"),
+                  
                     border: OutlineInputBorder(),
                     ),
                   ),
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: sifreYonetici,
                     decoration: InputDecoration(
                     hintText: "Şifre",
-                   // helper: Text("Şifrenizi Giriniz"),
+                  
                     border: OutlineInputBorder(),
                     ),
                   ),
