@@ -75,6 +75,8 @@ lib/
 |--yardımcılar/     #Yardımcı fonksiyonlar
 |--auth/            #Doğrulama fonksiyonları
 
+
+
 ## Ekran Görüntüleri
 
 ![Image](https://github.com/user-attachments/assets/6aa33a0b-c786-4eca-8749-07544b9960e7)
