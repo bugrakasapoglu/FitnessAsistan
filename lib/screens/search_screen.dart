@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/core/constants.dart';
-
 import 'home_screen.dart';
 
 class VoiceScreen extends StatelessWidget {
@@ -9,10 +7,8 @@ class VoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         title: const Text("Tamamlanmış Egzersizler"),
-        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -20,23 +16,41 @@ class VoiceScreen extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 16.0,
-            mainAxisSpacing: 16.0, 
-            childAspectRatio: 1, 
+            mainAxisSpacing: 16.0,
+            childAspectRatio: 1,
           ),
-          itemCount: 6, 
+          itemCount: 6,
           itemBuilder: (context, index) {
             return Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 254, 255, 255),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 2),
+                border: Border.all(color: Colors.black, width: 4), // Çerçeve kalınlığı artırıldı
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 8,
+                 ),
+                ],
               ),
-              child: const Center(
-                child: Icon(
-                  Icons.image, 
-                  size: 50,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: index == 0
+                    ? const Image(
+                        image: AssetImage("assets/images/barfiks.jpg"),
+                        fit: BoxFit.cover,
+                      )
+
+                    : index == 1
+                              ? const Image(
+                                  image: AssetImage("assets/images/hh1.jpg"),
+                                  fit: BoxFit.cover,
+                      )
+
+
+                    : const Icon(
+                        Icons.image,
+                        size: 50,
+                        color: Colors.black,
+                      ),
               ),
             );
           },

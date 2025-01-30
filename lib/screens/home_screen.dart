@@ -1,7 +1,7 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/core/constants.dart';
+//import 'package:flutter_app/core/constants.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
@@ -31,6 +31,8 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
+      
+
      
       body: Stack(
         children: [
@@ -54,28 +56,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: ListView(
-                  children: [
-                    Text(
-                      "Heading 1",
-                      style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    Text(
-                      "Heading 2",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    Text("Heading 3",
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                    Text("Heading 4",
-                      style: Theme.of(context).textTheme.displaySmall,
-                    ),
-                    
-
-                 ]
-                )
-              )
+         
             ],
           ),
 
@@ -84,7 +65,7 @@ class HomeScreen extends StatelessWidget {
             top: 16,
             left: 16,
             child: Text(
-              'Fitness Asistan',
+             '',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 35,

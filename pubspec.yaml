@@ -27,6 +27,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/sprint.webp
+    - assets/images/sınav.jpeg
+    - assets/images/plank.webp
+    - assets/images/hh1.jpg
+    - assets/images/barfiks.jpg
     
     - assets/motions/
 
