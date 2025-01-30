@@ -77,7 +77,21 @@ lib/
 
 ## Ekran Görüntüleri
 
-![Image](https://github.com/user-attachments/assets/e8d2fb6f-d562-4c99-9554-13236d3ce353)
+![Image](https://github.com/user-attachments/assets/6aa33a0b-c786-4eca-8749-07544b9960e7)
+
+![Image](https://github.com/user-attachments/assets/75ccfb0d-0455-448b-8d84-c6494ec2f308)
+
+![Image](https://github.com/user-attachments/assets/ffa5f671-c76a-4c10-9e93-a11530d68c57)
+
+![Image](https://github.com/user-attachments/assets/82fb8d01-5a2e-4216-aba8-ad18297f36f5)
+
+![Image](https://github.com/user-attachments/assets/1cd5f28d-0408-4d73-b0d1-5488462b0475)
+
+![Image](https://github.com/user-attachments/assets/21c44c82-7372-4eb0-8250-035acc1bd0f3)
+
+![Image](https://github.com/user-attachments/assets/1b4e3d90-4fbd-4224-b7a6-1aaf16182d20)
+
+![Image](https://github.com/user-attachments/assets/9aec96a7-e6f4-4e24-93d8-29128e7a8407)
 
 
 
