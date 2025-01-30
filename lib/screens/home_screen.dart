@@ -22,10 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
               colors: [
                 Theme.of(context).brightness == Brightness.light
                     ? Colors.green // Açık modda yeşil (doğa, sağlık)
-                    : Colors.teal,  // Koyu modda daha koyu yeşil tonları
+                    : Colors.green,  // Koyu modda daha koyu yeşil tonları
                 Theme.of(context).brightness == Brightness.light
                     ? Colors.orange // Enerjik turuncu
-                    : Colors.blueGrey, // Koyu modda soğuk tonlar
+                    : Colors.teal, // Koyu modda soğuk tonlar
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
