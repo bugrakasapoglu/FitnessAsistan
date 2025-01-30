@@ -18,39 +18,55 @@ class VoiceScreen extends StatelessWidget {
             crossAxisSpacing: 16.0,
             mainAxisSpacing: 16.0,
             childAspectRatio: 1,
+            
           ),
           itemCount: 6,
           itemBuilder: (context, index) {
             return Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.black, width: 4), // Çerçeve kalınlığı artırıldı
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 6),
                 boxShadow: [
-                  BoxShadow(
-                    blurRadius: 8,
-                 ),
+                
                 ],
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: index == 0
-                    ? const Image(
-                        image: AssetImage("assets/images/barfiks.jpg"),
+                child: Stack(
+                  children: [
+                  
+                    Positioned.fill(
+                      child: Image.asset(
+                        [
+                          "assets/images/barfiks.jpg",
+                          "assets/images/plank.webp",
+                          "assets/images/sprint.webp",
+                          "assets/images/halter.jpg",
+                          "assets/images/dumbel.jpg",
+                          "assets/images/sinav.jpg",
+                        ][index],
                         fit: BoxFit.cover,
-                      )
-
-                    : index == 1
-                              ? const Image(
-                                  image: AssetImage("assets/images/hh1.jpg"),
-                                  fit: BoxFit.cover,
-                      )
-
-
-                    : const Icon(
-                        Icons.image,
-                        size: 50,
-                        color: Colors.black,
                       ),
+                    ),
+                 
+                    Positioned(
+                      top: 8,
+                      right: 8,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.green.withOpacity(0.8), 
+                        ),
+                        padding: const EdgeInsets.all(8),
+                        child: const Icon(
+                          Icons.check_circle,
+                          color: Colors.white,
+                          size: 30, 
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },

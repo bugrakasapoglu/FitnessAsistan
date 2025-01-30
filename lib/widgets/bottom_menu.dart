@@ -41,12 +41,7 @@ class BottomMenu extends StatelessWidget {
           ),
         ),
     
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            CupertinoIcons.video_camera,
-          ),
-        ),
+       
     
       IconButton(
           onPressed: () {

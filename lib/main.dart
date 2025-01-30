@@ -6,7 +6,7 @@ import 'core/routes.dart';
 
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();  // Flutter widget'larını başlat
+  WidgetsFlutterBinding.ensureInitialized(); 
   runApp(const MyApp());
 }
 
@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: lightTheme,
       darkTheme: darkTheme,
-      routerConfig: router,  // go_router yapılandırmamızı kullan
-      debugShowCheckedModeBanner: false,  // Debug bandını kaldır
+      routerConfig: router,   
+      debugShowCheckedModeBanner: false,  
     );
   }
+
+  static of(BuildContext context) {}
 }
