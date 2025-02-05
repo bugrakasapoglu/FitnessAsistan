@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/storage_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_app/screens/home_screen.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -21,31 +23,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _loadUserData();
   }
 
-  Future<void> _loadUserData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? name = prefs.getString("name");
-    String? email = prefs.getString("email");
+Future<void> _loadUserData() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    if (name != null && email != null) {
+  String? currentUser = prefs.getString("currentUser");
+
+  if (currentUser != null) {
+    List<String> userData = currentUser.split(":");
+
+    if (userData.length >= 3) {
       setState(() {
-        userName = name;
-        userEmail = email;
+        userEmail = userData[0];
+        userName = userData[2];
         isLoggedIn = true;
       });
     }
   }
+}
 
-  Future<void> _logout() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
-    setState(() {
-      userName = null;
-      userEmail = null;
-      isLoggedIn = false;
-    });
 
-    context.go("/login");
-  }
+
+
+Future<void> _logout() async {
+  await UserStorage.logout();
+  setState(() {
+    userName = null;
+    userEmail = null;
+    isLoggedIn = false;
+  });
+
+  context.go("/login");
+}
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 55,
-              backgroundImage: AssetImage("assets/profile_avatar.png"), // Profil fotoğrafı eklenebilir
+              // backgroundImage: AssetImage("assets/profile_avatar.png"), // Profil fotoğrafı eklenebilir
             ),
           ),
           const SizedBox(height: 10),

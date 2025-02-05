@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_app/core/storage_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:go_router/go_router.dart';
+
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -17,23 +19,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  Future<void> _register() async {
-    if (_formKey.currentState!.validate()) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString("name", nameController.text);
-      await prefs.setString("email", emailController.text);
-      await prefs.setString("password", passwordController.text);
+Future<void> _register() async {
+  if (_formKey.currentState!.validate()) {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Kayıt başarılı! Giriş ekranına yönlendiriliyorsunuz.")),
-      );
+    // Eski kullanıcı listesini getir (eğer varsa)
+    List<String> users = prefs.getStringList("users") ?? [];
 
-      // 1 saniye bekleyip login ekranına yönlendiriyoruz
-      Future.delayed(const Duration(seconds: 1), () {
-        context.go("/login");
-      });
-    }
+    // Yeni kullanıcıyı listeye ekle
+    String newUser = "${emailController.text}:${passwordController.text}:${nameController.text}";
+    users.add(newUser);
+
+    // Güncellenmiş listeyi kaydet
+    await prefs.setStringList("users", users);
+
+    // Şu anki kullanıcıyı kaydet (tek kullanıcı)
+    await prefs.setString("currentUser", newUser);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Kayıt başarılı! Profilinize yönlendiriliyorsunuz.")),
+    );
+
+    Future.delayed(const Duration(seconds: 1), () {
+      context.go("/profile");
+    });
   }
+}
+
+
+
+
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_app/core/storage_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,36 +14,47 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  Future<void> _login() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedEmail = prefs.getString("email");
-    String? savedPassword = prefs.getString("password");
+Future<void> _login() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  List<String> users = prefs.getStringList("users") ?? [];
 
-    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
-      _showMessage("Bilgilerinizi giriniz.");
+  String email = emailController.text;
+  String password = passwordController.text;
+
+  for (String user in users) {
+    List<String> userData = user.split(":");
+
+    if (userData.length >= 3 && userData[0] == email && userData[1] == password) {
+      await prefs.setString("currentUser", user);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Giriş başarılı! Profil sayfasına yönlendiriliyorsunuz.")),
+      );
+
+      Future.delayed(const Duration(seconds: 1), () {
+        context.go("/profile");
+      });
+
       return;
     }
-
-    if (emailController.text == savedEmail && passwordController.text == savedPassword) {
-      _showMessage("Giriş başarılı!", isSuccess: true);
-      Future.delayed(const Duration(seconds: 1), () {
-        context.go("/home");
-      });
-    } else {
-      _showMessage("E-Posta veya şifre yanlış.");
-    }
   }
 
-  void _showMessage(String message, {bool isSuccess = false}) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: isSuccess ? Colors.green : Colors.red,
-        behavior: SnackBarBehavior.floating,
-        showCloseIcon: true,
-      ),
-    );
-  }
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(content: Text("E-posta veya şifre hatalı!")),
+  );
+}
+
+
+void _showMessage(String message, {bool isSuccess = false}) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+      backgroundColor: isSuccess ? Colors.green : Colors.red,
+      behavior: SnackBarBehavior.floating,
+      showCloseIcon: true,
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
