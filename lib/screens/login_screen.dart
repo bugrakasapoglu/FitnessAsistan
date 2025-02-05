@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,101 +10,82 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-  TextEditingController epostaYonetici = TextEditingController();
-  TextEditingController sifreYonetici = TextEditingController();
+  Future<void> _login() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? savedEmail = prefs.getString("email");
+    String? savedPassword = prefs.getString("password");
 
-  
-  girisYap() {
-   if (epostaYonetici.text.isEmpty || sifreYonetici.text.isEmpty) {
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+      _showMessage("Bilgilerinizi giriniz.");
+      return;
+    }
+
+    if (emailController.text == savedEmail && passwordController.text == savedPassword) {
+      _showMessage("Giriş başarılı!", isSuccess: true);
+      Future.delayed(const Duration(seconds: 1), () {
+        context.go("/home");
+      });
+    } else {
+      _showMessage("E-Posta veya şifre yanlış.");
+    }
+  }
+
+  void _showMessage(String message, {bool isSuccess = false}) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text("Bilgilerinizi Girinizi"),
-        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
+        content: Text(message),
+        backgroundColor: isSuccess ? Colors.green : Colors.red,
         behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.red,
         showCloseIcon: true,
-        ),
-      );
-    } else { 
-        if(sifreYonetici.text.length < 8) {
-             ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text("Şireniz minimum 8 haneli olmak zorundadır."),
-        // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.red,
-        showCloseIcon: true,
-        ),
-      );
-        }
-        else{
-          context.go("/home");
-        }
-        
-    }
-    
-   }
- 
+      ),
+    );
+  }
 
-
-
-   @override
-   Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body:  Center(
+      appBar: AppBar(title: const Text("Giriş Yap")),
+      body: Center(
         child: SizedBox(
-          width: 250,
+          width: 300,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Column(
-                children: [
-                  const Center(
-                    child: Text(""),
-                  ),
-                  TextField(
-                    controller: epostaYonetici,
-                    decoration: InputDecoration(
-                    hintText: "E-Posta",
-                  
-                    border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  TextField(
-                    obscureText: true,
-                    controller: sifreYonetici,
-                    decoration: InputDecoration(
-                    hintText: "Şifre",
-                  
-                    border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                  onPressed:girisYap, 
-                  child: const Text("Giriş Yap"),
-                  ),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      context.pushReplacement("/register");
-                    },
-                    child: const Text("Kayıt Ol"),
-                  ),
-                    SizedBox(height: 10),
-            
-                
-                 ],
+              TextField(
+                controller: emailController,
+                decoration: const InputDecoration(
+                  hintText: "E-Posta",
+                  border: OutlineInputBorder(),
                 ),
               ),
+              const SizedBox(height: 10),
+              TextField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  hintText: "Şifre",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: _login,
+                child: const Text("Giriş Yap"),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  context.pushReplacement("/register");
+                },
+                child: const Text("Kayıt Ol"),
+              ),
             ],
-          ) 
+          ),
         ),
-      ), // Center
-    ); // Scaffold
-   }
+      ),
+    );
+  }
 }
