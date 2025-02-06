@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 20,
                 children: [
                   FitnessCard(
-                    icon: CupertinoIcons.double_music_note,
+                    icon: CupertinoIcons.play,
                     title: 'Egzersiz Başlat',
                     onTap: () {},
                   ),
